@@ -21,7 +21,8 @@ class _HomePageState extends State<HomePage> {
             children: [
               Container(
                   child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Icon(Icons.location_on_rounded),
                   Text(
@@ -31,6 +32,9 @@ class _HomePageState extends State<HomePage> {
                       fontWeight: FontWeight.w600,
                       fontSize: 26,
                     ),
+                  ),
+                  SizedBox(
+                    width: 250,
                   ),
                   Icon(Icons.menu),
                 ],
@@ -139,50 +143,56 @@ class _HomePageState extends State<HomePage> {
                                   ),
                                 )),
                             Expanded(
-                                flex: 1,
-                                child: Container(
-                                  child: Row(
-                                    children: [
-                                      Expanded(
-                                        flex: 2,
-                                        child: Column(
-                                          children: [
-                                            Text(
-                                              allProducts[i]['title'],
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.black),
+                              flex: 1,
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  borderRadius: BorderRadius.circular(30),
+                                ),
+                                padding: EdgeInsets.all(5),
+                                child: Row(
+                                  children: [
+                                    Expanded(
+                                      flex: 2,
+                                      child: Column(
+                                        children: [
+                                          Text(
+                                            allProducts[i]['title'],
+                                            style: TextStyle(
+                                              fontSize: 20,
+                                              fontWeight: FontWeight.w500,
+                                              color: Colors.black,
                                             ),
-                                            SizedBox(
-                                              width: 40,
-                                            ),
-                                            Text(
-                                              "&${allProducts[i]['price']}",
-                                              style: TextStyle(
-                                                  fontSize: 20,
-                                                  fontWeight: FontWeight.w500,
-                                                  color: Colors.red),
-                                            ),
-                                          ],
+                                          ),
+                                          SizedBox(
+                                            width: 40,
+                                          ),
+                                          Text(
+                                            "&${allProducts[i]['price']}",
+                                            style: TextStyle(
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.w500,
+                                                color: Colors.red),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 1,
+                                      child: FloatingActionButton.small(
+                                        onPressed: () {
+                                          Navigator.of(context)
+                                              .pushNamed(MyRouts.cart_page);
+                                        },
+                                        child: Icon(
+                                          Icons.add,
+                                          color: Colors.white,
                                         ),
                                       ),
-                                      Expanded(
-                                        flex: 1,
-                                        child: FloatingActionButton.small(
-                                          onPressed: () {
-                                            Navigator.of(context)
-                                                .pushNamed(MyRouts.cart_page);
-                                          },
-                                          child: Icon(
-                                            Icons.add,
-                                            color: Colors.white,
-                                          ),
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ))
+                                    )
+                                  ],
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       );

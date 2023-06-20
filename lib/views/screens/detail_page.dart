@@ -44,37 +44,6 @@ class _DetailPageState extends State<DetailPage> {
       body: Center(
         child: Stack(
           children: [
-            // SingleChildScrollView(
-            //   scrollDirection: Axis.horizontal,
-            //   physics: const BouncingScrollPhysics(),
-            //   child: Row(
-            //     children: [
-            //       ...data['images']
-            //           .map(
-            //             (e) => Container(
-            //               height: h * 0.30,
-            //               width: w * 0.6,
-            //               margin: const EdgeInsets.all(20),
-            //               decoration: BoxDecoration(
-            //                 borderRadius: BorderRadius.circular(200),
-            //                 boxShadow: const [
-            //                   BoxShadow(
-            //                     blurRadius: 8,
-            //                     color: Colors.grey,
-            //                     offset: Offset(9, 9),
-            //                   ),
-            //                 ],
-            //                 image: DecorationImage(
-            //                   image: NetworkImage(e),
-            //                   fit: BoxFit.cover,
-            //                 ),
-            //               ),
-            //             ),
-            //           )
-            //           .toList(),
-            //     ],
-            //   ),
-            // ),
             Positioned(
               top: h * 0,
               right: w * 0.1,
